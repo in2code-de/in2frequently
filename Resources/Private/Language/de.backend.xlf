@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2026-02-24T00:00:00Z"
+    product-name="in2frequently">
+        <header/>
+        <body>
+            <trans-unit id="palette.in2frequently_visibility">
+                <source>Recurring Visibility</source>
+                <target>Wiederkehrende Sichtbarkeit</target>
+            </trans-unit>
+            <trans-unit id="TCA.frequently_active">
+                <source>Active</source>
+                <target>Aktiv</target>
+            </trans-unit>
+            <trans-unit id="TCA.frequently_starttime">
+                <source>Visible from (date expression)</source>
+                <target>Sichtbar ab (Datumsausdruck)</target>
+            </trans-unit>
+            <trans-unit id="TCA.frequently_endtime">
+                <source>Visible until (date expression)</source>
+                <target>Sichtbar bis (Datumsausdruck)</target>
+            </trans-unit>
+            <trans-unit id="valuePicker.everyDay">
+                <source>Every day at midnight</source>
+                <target>Jeden Tag um Mitternacht</target>
+            </trans-unit>
+            <trans-unit id="valuePicker.everyDayAt3am">
+                <source>Every day at 3am</source>
+                <target>Jeden Tag um 3Uhr morgens</target>
+            </trans-unit>
+            <trans-unit id="valuePicker.everyFirst">
+                <source>Every 1st of month</source>
+                <target>Jeden 1. des Monats</target>
+            </trans-unit>
+            <trans-unit id="valuePicker.everyThird">
+                <source>Every 3rd of month</source>
+                <target>Jeden 3. des Monats</target>
+            </trans-unit>
+            <trans-unit id="valuePicker.everyFifteenth">
+                <source>Every 15th of month</source>
+                <target>Jeden 15. des Monats</target>
+            </trans-unit>
+            <trans-unit id="valuePicker.everyTwentySeventh">
+                <source>Every 27th of month</source>
+                <target>Jeden 27. des Monats</target>
+            </trans-unit>
+            <trans-unit id="valuePicker.everyTwentySeventhMidnight">
+                <source>Every 27th of month at midnight</source>
+                <target>Jeden 27. des Monats um Mitternacht</target>
+            </trans-unit>
+            <trans-unit id="valuePicker.everyTwentyEighth">
+                <source>Every 28th of month</source>
+                <target>Jeden 28. des Monats</target>
+            </trans-unit>
+            <trans-unit id="valuePicker.everyFirstAt8am">
+                <source>Every 1st of month at 08:00</source>
+                <target>Jeden 1. des Monats um 08:00 Uhr</target>
+            </trans-unit>
+            <trans-unit id="valuePicker.everyFifteenthAt8am">
+                <source>Every 15th of month at 08:00</source>
+                <target>Jeden 15. des Monats um 08:00 Uhr</target>
+            </trans-unit>
+            <trans-unit id="valuePicker.everyFridayAt5am">
+                <source>Every Friday at 5pm</source>
+                <target>Jeden Freitag um 17 Uhr</target>
+            </trans-unit>
+            <!-- Expression preview wizard -->
+            <trans-unit id="preview.resolvedAt">
+                <source>Upcoming dates:</source>
+                <target>Nächste Zeitpunkte:</target>
+            </trans-unit>
+            <trans-unit id="preview.error">
+                <source>Expression could not be resolved.</source>
+                <target>Ausdruck konnte nicht aufgelöst werden.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

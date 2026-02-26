@@ -1,0 +1,22 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  In2code\In2frequently\:
+    resource: '../Classes/*'
+    exclude:
+      - '../Classes/TCA/TcaUtility.php'
+
+  In2code\In2frequently\TCA\AddPaletteToAccessTabListener:
+    tags:
+      - name: event.listener
+        identifier: 'in2frequently/add-palette-to-access-tab'
+        event: TYPO3\CMS\Core\Configuration\Event\AfterTcaCompilationEvent
+
+  In2code\In2frequently\EventListener\FrequentlyVisibilityEventListener:
+    tags:
+      - name: event.listener
+        identifier: 'in2frequently/filter-records-by-visibility'
+        event: TYPO3\CMS\Frontend\ContentObject\Event\ModifyRecordsAfterFetchingContentEvent

@@ -1,0 +1,40 @@
+{
+  "name": "in2code/in2frequently",
+  "description": "Recurring visibility windows for record elements",
+  "type": "typo3-cms-extension",
+  "homepage": "https://www.in2code.de",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Sandra Pohl",
+      "email": "sandra.pohl@in2code.de",
+      "homepage": "https://www.in2code.de",
+      "role": "Product owner"
+    },
+    {
+      "name": "Alexander Kellner",
+      "email": "alexander.kellner@in2code.de",
+      "role": "Developer",
+      "homepage": "https://www.in2code.de"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "typo3/cms-core": "^13.4",
+    "bentools/natural-cron-expression": "^1.0",
+    "dragonmantank/cron-expression": "^3.3"
+  },
+  "suggest": {
+    "lochmueller/staticfilecache": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "In2code\\In2frequently\\": "Classes/"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "in2frequently"
+    }
+  }
+}

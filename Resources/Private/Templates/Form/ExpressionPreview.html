@@ -1,0 +1,25 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:if condition="{times}">
+		<f:then>
+				<h4 class="mt-4" title="Cron expression: &quot;{cronExpression}&quot;">
+					<f:translate key="LLL:EXT:in2frequently/Resources/Private/Language/backend.xlf:preview.resolvedAt" />
+				</h4>
+
+				<ul class="list-group">
+					<f:for each="{times}" as="time" iteration="iteration">
+						<li class="list-group-item list-group-item-success">
+							<f:format.date format="d.m.Y H:i">{time}</f:format.date>
+						</li>
+					</f:for>
+					<li class="list-group-item list-group-item-success">...</li>
+				</ul>
+		</f:then>
+		<f:else>
+				<div class="alert alert-warning" role="alert">
+						<f:translate key="LLL:EXT:in2frequently/Resources/Private/Language/backend.xlf:preview.error" />
+				</div>
+		</f:else>
+</f:if>
+
+</html>
