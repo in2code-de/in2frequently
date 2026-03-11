@@ -17,10 +17,10 @@ Example integration in backend
 
 Each content element can optionally be extended with three fields in the **Recurring Visibility** palette:
 
-| Field | Description |
-|---|---|
-| **Active** | Enables recurring visibility control for this element |
-| **Visible from (date expression)** | Cron expression defining when the visibility window opens |
+| Field                               | Description                                                |
+|-------------------------------------|------------------------------------------------------------|
+| **Active**                          | Enables recurring visibility control for this element      |
+| **Visible from (date expression)**  | Cron expression defining when the visibility window opens  |
 | **Visible until (date expression)** | Cron expression defining when the visibility window closes |
 
 At render time, the extension compares the current timestamp against the most recent and next occurrence
@@ -56,33 +56,33 @@ the expression before saving.
 Expressions follow the natural language format provided by `bentools/natural-cron-expression`. The
 following patterns are supported:
 
-| Expression | Meaning |
-|---|---|
-| `every day` | Daily at midnight (00:00) |
-| `every day at 3 AM` | Daily at 03:00 |
-| `every 1st` | 1st of every month at midnight |
-| `every 15th` | 15th of every month at midnight |
-| `every 27th` | 27th of every month at midnight |
-| `every 27th midnight` | 27th of every month at 00:00 |
-| `every 1st at 8am` | 1st of every month at 08:00 |
-| `every 15th at 8am` | 15th of every month at 08:00 |
-| `every friday at 17:00` | Every Friday at 17:00 |
+| Expression              | Meaning                         |
+|-------------------------|---------------------------------|
+| `every day`             | Daily at midnight (00:00)       |
+| `every day at 3 AM`     | Daily at 03:00                  |
+| `every 1st`             | 1st of every month at midnight  |
+| `every 15th`            | 15th of every month at midnight |
+| `every 27th`            | 27th of every month at midnight |
+| `every 27th midnight`   | 27th of every month at 00:00    |
+| `every 1st at 8am`      | 1st of every month at 08:00     |
+| `every 15th at 8am`     | 15th of every month at 08:00    |
+| `every friday at 17:00` | Every Friday at 17:00           |
 
 Standard cron syntax (e.g. `0 8 1 * *`) is also accepted.
 
 ### Example: monthly content from 1st to 15th
 
-| Field | Value |
-|---|---|
-| Visible from | `every 1st` |
+| Field         | Value        |
+|---------------|--------------|
+| Visible from  | `every 1st`  |
 | Visible until | `every 15th` |
 
 ### Example: weekly content from Friday evening to Monday morning
 
-| Field | Value |
-|---|---|
-| Visible from | `every friday at 17:00` |
-| Visible until | `every monday` |
+| Field         | Value                   |
+|---------------|-------------------------|
+| Visible from  | `every friday at 17:00` |
+| Visible until | `every monday`          |
 
 ## Cache Integration
 
@@ -99,6 +99,6 @@ composer req lochmueller/staticfilecache
 
 ## Changelog
 
-| Version | Date | State | Description |
-|---|---|---|---|
-| 1.0.0 | 2026-02 | Task | Initial release |
+| Version | Date       | State | Description     |
+|---------|------------|-------|-----------------|
+| 1.0.0   | 2026-03-11 | Task  | Initial release |
