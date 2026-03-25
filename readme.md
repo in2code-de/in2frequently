@@ -97,6 +97,54 @@ supported. When staticfilecache is installed, it is recommended to require it:
 composer req lochmueller/staticfilecache
 ```
 
+## Local Development
+
+The extension ships a [DDEV](https://ddev.readthedocs.io) configuration for a self-contained local
+TYPO3 environment. It sets up a full TYPO3 13.4 instance with a demo page and a content element so
+you can test the extension immediately after initialization.
+
+### Prerequisites
+
+- [DDEV](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/) installed
+- Docker running
+
+### First-time setup
+
+```bash
+ddev start
+ddev initialize
+```
+
+`ddev initialize` installs Composer dependencies, runs the TYPO3 setup wizard, applies the DDEV
+configuration, imports the demo database content, and flushes caches. It takes about a minute.
+
+After initialization:
+
+|                        | URL                                     |
+|------------------------|-----------------------------------------|
+| **Backend**            | https://in2frequently.ddev.site/typo3   |
+| **Frontend demo page** | https://in2frequently.ddev.site/example |
+| **Login**              | `admin` / `admin`                       |
+
+### Daily workflow
+
+```bash
+ddev start          # start containers
+ddev stop           # stop containers
+ddev typo3 cache:flush                  # flush TYPO3 cache
+ddev typo3 database:updateschema        # apply DB schema changes after TCA edits
+```
+
+### Persisting content changes
+
+After making content changes in the backend that should be shared with other developers, export
+the database and commit the result:
+
+```bash
+ddev createdumpfile   # exports to .ddev/data/demo.sql
+git add .ddev/data/demo.sql
+```
+
 ## Changelog
 
 | Version | Date       | State | Description     |

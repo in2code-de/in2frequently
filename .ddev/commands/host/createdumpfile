@@ -1,0 +1,8 @@
+#!/bin/bash
+
+## Description: Export current database to .ddev/data/demo.sql
+## Usage: createdumpfile
+## Example: "ddev createdumpfile"
+
+ddev export-db --gzip=false --file=.ddev/data/demo.sql
+echo "✓ Database exported to .ddev/data/demo.sql"

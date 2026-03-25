@@ -1,0 +1,60 @@
+#!/bin/bash
+
+## Description: Set up local TYPO3 development environment with demo content
+## Usage: initialize
+## Example: "ddev initialize"
+
+set -e
+
+echo "→ Installing Composer dependencies..."
+ddev composer install
+
+echo "→ Copying .htaccess..."
+cp .Build/vendor/typo3/cms-install/Resources/Private/FolderStructureTemplateFiles/root-htaccess .Build/public/.htaccess
+
+echo "→ Applying pre-setup configuration (password policy)..."
+mkdir -p config/sites/main config/system
+ln -snf ../../../.ddev/TYPO3/config.yaml config/sites/main/config.yaml
+ln -snf ../../.ddev/TYPO3/additional.php config/system/additional.php
+
+echo "→ Resetting database..."
+ddev exec mysql -u root -proot -e "DROP DATABASE IF EXISTS db; CREATE DATABASE db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+
+echo "→ Running TYPO3 setup..."
+ddev exec .Build/bin/typo3 setup \
+    --driver=mysqli \
+    --host=db \
+    --port=3306 \
+    --dbname=db \
+    --username=db \
+    --password=db \
+    --admin-username=admin \
+    --admin-user-password='Admin1234!' \
+    --admin-email=admin@in2frequently.ddev.site \
+    --project-name=in2frequently \
+    --server-type=other \
+    --force \
+    --no-interaction
+
+echo "→ Applying DDEV settings..."
+ln -snf ../../.ddev/TYPO3/settings.php config/system/settings.php
+
+echo "→ Resetting admin password to 'admin'..."
+ddev exec php /var/www/html/.ddev/data/reset_password.php
+
+echo "→ Updating database schema..."
+ddev exec .Build/bin/typo3 database:updateschema 2>/dev/null || true
+
+echo "→ Importing demo content..."
+ddev mysql < .ddev/data/demo.sql
+
+echo "→ Flushing caches..."
+ddev exec .Build/bin/typo3 cache:flush
+
+echo ""
+echo "✓ Done! Your TYPO3 instance is ready."
+echo ""
+echo "  Backend:  https://in2frequently.ddev.site/typo3"
+echo "  Frontend: https://in2frequently.ddev.site/example"
+echo "  Login:    admin / admin"
+echo ""

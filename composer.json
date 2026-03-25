@@ -24,6 +24,26 @@
     "bentools/natural-cron-expression": "^1.0",
     "dragonmantank/cron-expression": "^3.3"
   },
+  "require-dev": {
+    "helhum/typo3-console": "^8.3",
+    "typo3/cms-backend": "^13.4",
+    "typo3/cms-belog": "^13.4",
+    "typo3/cms-beuser": "^13.4",
+    "typo3/cms-dashboard": "^13.4",
+    "typo3/cms-extbase": "^13.4",
+    "typo3/cms-extensionmanager": "^13.4",
+    "typo3/cms-filelist": "^13.4",
+    "typo3/cms-fluid": "^13.4",
+    "typo3/cms-fluid-styled-content": "^13.4",
+    "typo3/cms-frontend": "^13.4",
+    "typo3/cms-info": "^13.4",
+    "typo3/cms-install": "^13.4",
+    "typo3/cms-lowlevel": "^13.4",
+    "typo3/cms-rte-ckeditor": "^13.4",
+    "typo3/cms-scheduler": "^13.4",
+    "typo3/cms-setup": "^13.4",
+    "typo3/cms-tstemplate": "^13.4"
+  },
   "suggest": {
     "lochmueller/staticfilecache": "*"
   },
@@ -34,7 +54,18 @@
   },
   "extra": {
     "typo3/cms": {
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "web-dir": ".Build/public",
       "extension-key": "in2frequently"
+    }
+  },
+  "config": {
+    "vendor-dir": ".Build/vendor",
+    "bin-dir": ".Build/bin",
+    "sort-packages": true,
+    "allow-plugins": {
+      "typo3/class-alias-loader": true,
+      "typo3/cms-composer-installers": true
     }
   }
 }
