@@ -28,10 +28,11 @@ class FrequentlyVisibilityService
         $now = new DateTimeImmutable('now');
         if ($startExpression !== '' && $endExpression !== '') {
             try {
+                $nextStart = $this->expressionResolver->resolveUpcomingDate($startExpression);
                 $nextStop = $this->expressionResolver->resolveUpcomingDate($endExpression);
                 $lastStart = $this->expressionResolver->resolveLastDate($startExpression);
                 $lastStop = $this->expressionResolver->resolveLastDate($endExpression);
-                return $lastStart <= $now && $now <= $nextStop && $lastStop < $lastStart;
+                return $lastStart <= $now && $now < $nextStop && $lastStop < $lastStart && $nextStop < $nextStart;
             } catch (\Throwable) {
                 // Invalid expression – no restriction applied
             }
