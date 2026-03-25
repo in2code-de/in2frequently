@@ -147,8 +147,9 @@ git add .ddev/data/demo.sql
 
 ## Changelog
 
-| Version | Date       | State  | Description                                                                                 |
-|---------|------------|--------|---------------------------------------------------------------------------------------------|
-| 2.0.1   | 2026-03-25 | Bugfix | Fix problem with not available dates like "every 30th" even if there is no 30th in february |
-| 2.0.0   | 2026-03-25 | Task   | Add a local environment for better contribution (DDEV), support cron strings now            |
-| 1.0.0   | 2026-03-11 | Task   | Initial release                                                                             |
+| Version | Date       | State   | Description                                                                                 |
+|---------|------------|---------|---------------------------------------------------------------------------------------------|
+| 2.1.0   | 2026-03-25 | Feature | Add a status badge if the content element is visible or not                                 |
+| 2.0.1   | 2026-03-25 | Bugfix  | Fix problem with not available dates like "every 30th" even if there is no 30th in february |
+| 2.0.0   | 2026-03-25 | Task    | Add a local environment for better contribution (DDEV), support cron strings now            |
+| 1.0.0   | 2026-03-11 | Task    | Initial release                                                                             |
