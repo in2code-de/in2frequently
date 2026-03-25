@@ -20,6 +20,7 @@ class TcaUtility
             [self::LANGUAGE_FILE_PREFIX . 'valuePicker.everyFirstAt8am', 'every 1st at 8am'],
             [self::LANGUAGE_FILE_PREFIX . 'valuePicker.everyFifteenthAt8am', 'every 15th at 8am'],
             [self::LANGUAGE_FILE_PREFIX . 'valuePicker.everyFridayAt5am', 'every friday at 17:00'],
+            [self::LANGUAGE_FILE_PREFIX . 'valuePicker.everyMondayTuesdayAt1pm', '0 13 * * 1,2'],
         ];
     }
 }

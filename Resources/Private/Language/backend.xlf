@@ -49,6 +49,9 @@
             <trans-unit id="valuePicker.everyFridayAt5am">
                 <source>Every Friday at 5pm</source>
             </trans-unit>
+            <trans-unit id="valuePicker.everyMondayTuesdayAt1pm">
+                <source>Every Monday and Tuesday at 1pm</source>
+            </trans-unit>
             <!-- Expression preview wizard -->
             <trans-unit id="preview.resolvedAt">
                 <target>Nächste Zeitpunkte:</target>

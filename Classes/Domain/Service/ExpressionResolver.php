@@ -54,6 +54,9 @@ class ExpressionResolver
 
     public function resolveCronExpression(string $expression): string
     {
+        if ($this->isRawCronExpression($expression)) {
+            return $expression;
+        }
         set_error_handler(static fn () => true);
         try {
             $cronString = NaturalCronExpressionParser::fromString($expression);
@@ -61,5 +64,10 @@ class ExpressionResolver
             restore_error_handler();
         }
         return $cronString;
+    }
+
+    private function isRawCronExpression(string $expression): bool
+    {
+        return preg_match('~' . NaturalCronExpressionParser::VALID_PATTERN . '~', $expression) === 1;
     }
 }
