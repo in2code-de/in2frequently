@@ -77,6 +77,15 @@
                 <source>Expression could not be resolved.</source>
                 <target>Ausdruck konnte nicht aufgelöst werden.</target>
             </trans-unit>
+            <!-- Visibility status wizard -->
+            <trans-unit id="status.visible">
+                <source>Currently visible</source>
+                <target>Aktuell sichtbar</target>
+            </trans-unit>
+            <trans-unit id="status.notVisible">
+                <source>Currently not visible</source>
+                <target>Aktuell nicht sichtbar</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

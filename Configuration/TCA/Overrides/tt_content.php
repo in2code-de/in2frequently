@@ -17,6 +17,11 @@ $tca = [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
                 'default' => 0,
+                'fieldWizard' => [
+                    'in2frequentlyVisibilityStatus' => [
+                        'renderType' => 'in2frequentlyVisibilityStatus',
+                    ],
+                ],
             ],
         ],
         'tx_in2frequently_starttime' => [

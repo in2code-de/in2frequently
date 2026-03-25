@@ -54,10 +54,17 @@
             </trans-unit>
             <!-- Expression preview wizard -->
             <trans-unit id="preview.resolvedAt">
-                <target>Nächste Zeitpunkte:</target>
+                <source>Upcoming dates:</source>
             </trans-unit>
             <trans-unit id="preview.error">
                 <source>Expression could not be resolved.</source>
+            </trans-unit>
+            <!-- Visibility status wizard -->
+            <trans-unit id="status.visible">
+                <source>Currently visible</source>
+            </trans-unit>
+            <trans-unit id="status.notVisible">
+                <source>Currently not visible</source>
             </trans-unit>
         </body>
     </file>

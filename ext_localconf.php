@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use In2code\In2frequently\Form\FieldWizard\ExpressionPreviewWizard;
+use In2code\In2frequently\Form\FieldWizard\VisibilityStatusWizard;
 
 defined('TYPO3') || die();
 
@@ -13,4 +14,13 @@ $GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1740481001] = [
     'nodeName' => 'in2frequentlyExpressionPreview',
     'priority' => 40,
     'class' => ExpressionPreviewWizard::class,
+];
+
+/**
+ * Add visibility status badge (visible/not visible) to the active toggle field
+ */
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['formEngine']['nodeRegistry'][1742900001] = [
+    'nodeName' => 'in2frequentlyVisibilityStatus',
+    'priority' => 40,
+    'class' => VisibilityStatusWizard::class,
 ];

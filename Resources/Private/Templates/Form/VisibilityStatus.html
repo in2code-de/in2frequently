@@ -1,0 +1,16 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:if condition="{isVisible}">
+	<f:then>
+		<span class="badge bg-success mt-2 d-inline-block">
+			<f:translate key="LLL:EXT:in2frequently/Resources/Private/Language/backend.xlf:status.visible" />
+		</span>
+	</f:then>
+	<f:else>
+		<span class="badge bg-danger mt-2 d-inline-block">
+			<f:translate key="LLL:EXT:in2frequently/Resources/Private/Language/backend.xlf:status.notVisible" />
+		</span>
+	</f:else>
+</f:if>
+
+</html>
