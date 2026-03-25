@@ -147,6 +147,7 @@ git add .ddev/data/demo.sql
 
 ## Changelog
 
-| Version | Date       | State | Description     |
-|---------|------------|-------|-----------------|
-| 1.0.0   | 2026-03-11 | Task  | Initial release |
+| Version | Date       | State | Description                                                                      |
+|---------|------------|-------|----------------------------------------------------------------------------------|
+| 2.0.0   | 2026-03-25 | Task  | Add a local environment for better contribution (DDEV), support cron strings now |
+| 1.0.0   | 2026-03-11 | Task  | Initial release                                                                  |
