@@ -12,26 +12,31 @@ class ExpressionResolver
 {
     protected const UPCOMING_DATES_COUNT = 3;
 
+    /**
+     * An upcoming date is always strictly in the future. The current minute must not be returned here, otherwise
+     * the resulting date would already lie in the past for every request after second 0 of that minute.
+     */
     public function resolveUpcomingDate(string $expression): DateTimeImmutable
     {
         $cronString = $this->resolveCronExpression($expression);
         $nextRun = (new CronExpression($cronString))->getNextRunDate(
-            (new DateTimeImmutable('now'))->format('Y-m-d H:i:s'),
-            0,
-            true
+            (new DateTimeImmutable('now'))->format('Y-m-d H:i:s')
         );
         return DateTimeImmutable::createFromMutable($nextRun);
     }
 
+    /**
+     * In contrast to resolveUpcomingDate() the current minute counts as the last run - a record that starts
+     * "now" has already started.
+     */
     public function resolveLastDate(string $expression): DateTimeImmutable
     {
         $cronString = $this->resolveCronExpression($expression);
-        $nextRun = (new CronExpression($cronString))->getPreviousRunDate(
+        $previousRun = (new CronExpression($cronString))->getPreviousRunDate(
             (new DateTimeImmutable('now'))->format('Y-m-d H:i:s'),
-            0,
-            true
+            allowCurrentDate: true
         );
-        return DateTimeImmutable::createFromMutable($nextRun);
+        return DateTimeImmutable::createFromMutable($previousRun);
     }
 
     /**
@@ -42,9 +47,7 @@ class ExpressionResolver
         $cronString = $this->resolveCronExpression($expression);
         $runs = (new CronExpression($cronString))->getMultipleRunDates(
             self::UPCOMING_DATES_COUNT,
-            (new DateTimeImmutable('now'))->format('Y-m-d H:i:s'),
-            false,
-            true
+            (new DateTimeImmutable('now'))->format('Y-m-d H:i:s')
         );
         return array_map(
             static fn (\DateTime $date) => DateTimeImmutable::createFromMutable($date),

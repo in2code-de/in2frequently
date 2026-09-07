@@ -149,6 +149,7 @@ git add .ddev/data/demo.sql
 
 | Version | Date       | State   | Description                                                                                 |
 |---------|------------|---------|---------------------------------------------------------------------------------------------|
+| 3.0.1   | 2026-09-07 | Bugfix  | Fix content element staying hidden and page being cached forever in the switching minute    |
 | 3.0.0   | 2026-04-13 | Feature | Support TYPO3 14 and 13                                                                     |
 | 2.1.0   | 2026-03-25 | Feature | Add a status badge if the content element is visible or not                                 |
 | 2.0.1   | 2026-03-25 | Bugfix  | Fix problem with not available dates like "every 30th" even if there is no 30th in february |

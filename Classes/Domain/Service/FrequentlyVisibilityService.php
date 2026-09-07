@@ -15,6 +15,10 @@ class FrequentlyVisibilityService
     protected const FIELD_ACTIVE = 'tx_in2frequently_active';
     protected const FIELD_STARTTIME = 'tx_in2frequently_starttime';
     protected const FIELD_ENDTIME = 'tx_in2frequently_endtime';
+    /**
+     * A lifetime of 0 would tell TYPO3 to cache the page "forever" (Typo3DatabaseBackend::FAKED_UNLIMITED_EXPIRE)
+     */
+    protected const MINIMUM_CACHE_LIFETIME = 1;
 
     public function __construct(
         private readonly ConnectionPool $connectionPool,
@@ -56,7 +60,10 @@ class FrequentlyVisibilityService
                 $record[self::FIELD_ENDTIME] ?? ''
             );
             if ($cacheInvalidationDate !== null) {
-                $remainingSeconds = max(0, $cacheInvalidationDate->getTimestamp() - time());
+                $remainingSeconds = max(
+                    self::MINIMUM_CACHE_LIFETIME,
+                    $cacheInvalidationDate->getTimestamp() - time()
+                );
                 // Can be called multiple times and TYPO3 uses smallest seconds for cache invalidation
                 $cacheDataCollector->restrictMaximumLifetime($remainingSeconds);
             }
